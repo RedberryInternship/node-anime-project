@@ -18,9 +18,8 @@ const server = express()
 server.get('/', async (_, res) => {
     const images = await Image.find()
 
-    const randomImgIdx = parseInt(Math.random() * 100) % images.length
-
-    res.send(`
+    if(images.length == 0) {
+        res.send(`
     <html>
         <head>
             <title>Naruto</title>
@@ -38,13 +37,47 @@ server.get('/', async (_, res) => {
                 border-radius: 10px;
             }
         </style>
-        <a href="/" style="width: 50%">
-            <img src="${images[randomImgIdx].url}" style="width: 100%" />
-        </a>
+            <h1 style="color: white">There are no Images 😭</h1>
         </body>
     </html>
     `);
+    } else {
+        const randomImgIdx = parseInt(Math.random() * 100) % images.length
+
+        res.send(`
+        <html>
+            <head>
+                <title>Naruto</title>
+            </head>
+            <body>
+            <style>
+                body {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: #0c112d;
+                }
+    
+                img {
+                    border-radius: 10px;
+                }
+            </style>
+            <a href="/" style="width: 50%">
+                <img src="${images[randomImgIdx].url}" style="width: 100%" />
+            </a>
+            </body>
+        </html>
+        `);
+    }
 })
+
+server.get('/delete', async (req, res) => {
+    await Image.deleteMany()
+    res.send(
+        '<h1>Deleted!</h1>'
+    )
+})
+
 
 server.get('/reset', (req, res) => {
       [
