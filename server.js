@@ -15,8 +15,6 @@ const imagesSchema = new mongoose.Schema({
 
 
 
-
-
 const Image = mongoose.model('Image', imagesSchema)
 
 const server = express()
