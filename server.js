@@ -22,9 +22,6 @@ server.get('/', async (_, res) => {
     if(images.length == 0) {
         res.send(`
     <html>
-        <head>
-            <title>Naruto</title>
-        </head>
         <body>
         <style>
             body {
