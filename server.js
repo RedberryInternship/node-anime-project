@@ -46,17 +46,7 @@ server.get('/', async (_, res) => {
         
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
         
         const randomImgIdx = parseInt(Math.random() * 100) % images.length
 
