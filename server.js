@@ -7,6 +7,7 @@ mongoose.connect(mongoConnectionURI)
     .then(() => console.log('connected to database'))
     .catch(e => console.log(e.message))
 
+// სერვერების ფერია
 
 const imagesSchema = new mongoose.Schema({
     url: String,
