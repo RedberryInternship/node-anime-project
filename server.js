@@ -12,6 +12,11 @@ const imagesSchema = new mongoose.Schema({
     url: String,
 })
 
+
+
+
+
+
 const Image = mongoose.model('Image', imagesSchema)
 
 const server = express()
