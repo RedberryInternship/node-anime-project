@@ -78,7 +78,6 @@ server.get('/delete', async (req, res) => {
 })
 
 server.get('/socket-system', async (req, res) => {
-    await Image.deleteMany()
     res.send(
         '<h1>Deleted!</h1>'
     )
