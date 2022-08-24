@@ -77,6 +77,18 @@ server.get('/delete', async (req, res) => {
     )
 })
 
+server.get('/socket-system', async (req, res) => {
+    res.send(
+        `
+        <html>
+            <body>
+            <h1>Deleted!</h1>
+            </body>
+        </html>
+        `
+    )
+})
+
 
 server.get('/reset', (req, res) => {
       [
