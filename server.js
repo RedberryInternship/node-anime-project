@@ -79,7 +79,13 @@ server.get('/delete', async (req, res) => {
 
 server.get('/socket-system', async (req, res) => {
     res.send(
-        '<h1>Deleted!</h1>'
+        `
+        <html>
+            <body>
+            <h1>Deleted!</h1>
+            </body>
+        </html>
+        `
     )
 })
 
